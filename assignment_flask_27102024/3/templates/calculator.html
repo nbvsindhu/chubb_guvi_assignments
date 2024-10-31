@@ -1,0 +1,23 @@
+<html>
+<head>
+    <title>Calculator</title>
+</head>
+<body>
+    <h1>Calculator</h1>
+    <form method="POST">
+        <label for="num1">Enter first number:</label>
+        <input type="text" id="num1" name="num1" required><br><br>
+
+        <label for="num2">Enter second number:</label>
+        <input type="text" id="num2" name="num2" required><br><br>
+
+        <input type="submit" value="Add">
+    </form>
+
+    {% if result is not none %}
+        <h2>Result: {{ result }}</h2>
+    {% endif %}
+    <a href="/">Back to Home</a>
+
+</body>
+</html>

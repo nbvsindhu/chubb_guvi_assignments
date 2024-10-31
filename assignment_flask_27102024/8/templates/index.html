@@ -1,0 +1,28 @@
+<html>
+<head>
+    <title>Feedback Form</title>
+</head>
+<body>
+    <h1>Feedback Form</h1>
+    <form method="POST">
+        <label for="name">Name:</label><br>
+        <input type="text" id="name" name="name" required><br><br>
+        
+        <label for="feedback">Feedback:</label><br>
+        <textarea id="feedback" name="feedback" rows="4" required></textarea><br><br>
+        
+        <input type="submit" value="Submit Feedback">
+    </form>
+
+    <h2>Feedback:</h2>
+    <div>
+        {% for entry in feedbacks %}
+            <div class="feedback-entry">
+                <strong>{{ entry.name }}:</strong> {{ entry.feedback }}
+            </div>
+        {% else %}
+            <p>No feedback yet.</p>
+        {% endfor %}
+    </div>
+</body>
+</html>
