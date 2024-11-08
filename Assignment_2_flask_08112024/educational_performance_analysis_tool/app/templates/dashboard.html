@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Welcome, {{ user.username }}!</h1>
+        <a href="{{ url_for('auth.logout') }}">Logout</a>
+    </header>
+
+    <section class="dashboard">
+        <h2>Student Performance Dashboard</h2>
+        
+
+        <div id="chart1" class="chart-container"></div>
+
+
+        <div id="chart2" class="chart-container"></div>
+
+
+        <div id="chart3" class="chart-container"></div>
+
+
+        <div id="chart4" class="chart-container"></div>
+
+
+        <div id="chart5" class="chart-container"></div>
+    </section>
+
+    <script>
+
+        const chartData = {{ data|tojson }};
+
+
+        Plotly.newPlot('chart1', [{ 
+            x: ['Math', 'Science', 'History', 'English'], 
+            y: [85, 90, 78, 92], 
+            type: 'bar' 
+        }], { title: 'Overall Performance by Subject' });
+
+        Plotly.newPlot('chart2', [{ 
+            x: ['January', 'February', 'March', 'April'], 
+            y: [95, 92, 89, 94], 
+            type: 'line' 
+        }], { title: 'Student Attendance Trends' });
+
+        Plotly.newPlot('chart3', [{ 
+            values: [20, 30, 25, 15, 10], 
+            labels: ['A', 'B', 'C', 'D', 'F'], 
+            type: 'pie' 
+        }], { title: 'Grade Distribution' });
+
+        Plotly.newPlot('chart4', [{ 
+            x: ['January', 'February', 'March', 'April'], 
+            y: [88, 90, 87, 91], 
+            type: 'line' 
+        }], { title: 'Monthly Progress' });
+
+        Plotly.newPlot('chart5', [{ 
+            x: ['Student 1', 'Student 2', 'Student 3'], 
+            y: [95, 92, 90], 
+            type: 'bar' 
+        }], { title: 'Top Performing Students' });
+    </script>
+</body>
+</html>

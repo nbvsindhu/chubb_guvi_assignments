@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Climate Data Dashboard</title>
+</head>
+<body>
+    <h1>Welcome to the Climate Data Dashboard</h1>
+    
+    <div>
+        <h2>Temperature Trends</h2>
+        {{ fig1|safe }}
+    </div>
+    
+    <div>
+        <h2>Precipitation Trends</h2>
+        {{ fig2|safe }}
+    </div>
+
+    <a href="{{ url_for('logout') }}">Logout</a>
+</body>
+</html>

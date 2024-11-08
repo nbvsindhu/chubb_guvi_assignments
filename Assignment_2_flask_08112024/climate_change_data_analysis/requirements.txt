@@ -1,0 +1,9 @@
+flask
+sqlalchemy
+psycopg2
+mysql-connector-python
+pandas
+requests
+plotly
+flask-login
+flask-migrate
